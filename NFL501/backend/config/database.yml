@@ -1,7 +1,8 @@
+# backend/config/database.yml
 development:
   adapter: sqlite
-  database: db/nfl501.sqlite3
+  database: /app/backend/data/nfl501.sqlite3
 
 production:
   adapter: sqlite
-  database: db/nfl501.sqlite3
+  database: /app/backend/data/nfl501.sqlite3
