@@ -18,6 +18,4 @@ COPY backend /app/backend
 RUN mkdir -p /app/backend/data /app/backend/data/depot
 
 EXPOSE 8000
-
-# Safe bootstrap: try to add General registry if missing, then instantiate, start server
-CMD ["julia","--project=/app/backend","-e","using Pkg; try Pkg.Registry.add(\"General\") catch err; @info(\"registry add skipped\", err=err); end; Pkg.instantiate(); include(\"/app/backend/config/routes.jl\");"]
+CMD ["julia","--project=/app/backend","/app/backend/start.jl"]
