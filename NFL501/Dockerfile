@@ -29,4 +29,4 @@ EXPOSE 8000
 
 # IMPORTANT: do NOT force-remove/re-add the registry.
 # Add "General" only if missing, then instantiate, then start the server.
-CMD ["julia","--project=/app/backend","-e","using Pkg; if !haskey(Pkg.Registry.registries(), \"General\"); try Pkg.Registry.add(\"General\") catch err; @warn(\"Registry add failed\", err); end; end; Pkg.instantiate(); include(\"/app/backend/config/routes.jl\");"]
+CMD ["julia","--project=/app/backend","-e","using Pkg; try Pkg.Registry.add(\"General\") catch err; @info(\"registry add skipped\", err=err); end; Pkg.instantiate(); include(\"/app/backend/config/routes.jl\");"]
