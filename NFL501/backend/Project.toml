@@ -1,0 +1,20 @@
+name = "NFL501"
+uuid = "3bde5f24-3d6a-4b3a-9d8a-8c2fb8da5010"
+authors = ["You"]
+version = "0.5.0"
+
+[deps]
+Genie = "c43c736e-a2d1-11e8-161f-af95117fbd1e"
+SearchLight = "340e8cb6-72eb-11e8-37ce-c97ebebbd7f7"
+SearchLightSQLite = "54ab9b10-ffe5-5d7c-84f4-9ec1c37f8d7a"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Random = "9a3f8284-686f-5f34-9a15-8d3f9005bf4a"
+TimeZones = "f269a46b-ccf7-5d73-a28a-6f8ad6f7f44a"
+SHA = "ea8e919c-243c-51af-8825-aaa63cd721ce"
+MbedTLS = "739be429-bea8-5141-9913-cc70e7f3736d"
+Bcrypt = "a3993d26-4b3d-5ab8-bc82-72c130522b84"
+Parsers = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"

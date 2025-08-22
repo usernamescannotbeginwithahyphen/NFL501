@@ -1,0 +1,7 @@
+development:
+  adapter: sqlite
+  database: db/nfl501.sqlite3
+
+production:
+  adapter: sqlite
+  database: db/nfl501.sqlite3

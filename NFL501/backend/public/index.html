@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NFL 501</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>NFL 501</h1>
+    <div id="auth">
+      <div id="whoami"></div>
+      <div id="auth-forms">
+        <input id="username" placeholder="username" />
+        <input id="password" placeholder="password" type="password" />
+        <button id="signup">Sign up</button>
+        <button id="login">Log in</button>
+        <button id="logout" class="hidden">Log out</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="game" class="hidden">
+      <div class="row">
+        <div id="date"></div>
+        <div id="label"></div>
+        <div id="target"><span id="remaining">501</span> / 501</div>
+      </div>
+      <div class="row">
+        <input id="answer" placeholder="Type a player/team..." disabled />
+        <button id="guessBtn" disabled>Guess</button>
+        <button id="giveUpBtn" class="secondary" disabled>Give Up</button>
+      </div>
+      <div id="suggestions"></div>
+      <div id="guesses"></div>
+      <div id="final"></div>
+    </section>
+  </main>
+  <footer>
+    <small>Stats via <a href="https://nflverse.nflverse.com/" target="_blank" rel="noreferrer">nflverse</a> • Timezone: America/Chicago</small>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>
