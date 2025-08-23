@@ -1,0 +1,8 @@
+{
+  "name": "NFL501 Dev",
+  "features": {
+    "ghcr.io/devcontainers/features/julia:1": {
+      "version": "1.9.4"
+    }
+  }
+}
