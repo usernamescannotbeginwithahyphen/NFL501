@@ -1,0 +1,38 @@
+name: Generate Julia Manifest
+on:
+  workflow_dispatch: {}
+
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set backend path
+        id: path
+        shell: bash
+        run: |
+          if [ -d NFL501/backend ]; then
+            echo "dir=NFL501/backend" >> "$GITHUB_OUTPUT"
+          elif [ -d backend ]; then
+            echo "dir=backend" >> "$GITHUB_OUTPUT"
+          else
+            echo "backend/ not found" >&2
+            exit 1
+          fi
+
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.9.4'
+
+      - name: Instantiate (writes Manifest.toml)
+        run: |
+          julia --project="${{ steps.path.outputs.dir }}" -e 'using Pkg; Pkg.Registry.add("General"); Pkg.instantiate(); Pkg.precompile()'
+
+      - name: Commit Manifest.toml
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Add ${{ steps.path.outputs.dir }}/Manifest.toml (CI)"
+          file_pattern: ${{ steps.path.outputs.dir }}/Manifest.toml
