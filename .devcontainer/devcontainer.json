@@ -1,6 +1,0 @@
-{
-  "name": "NFL501 (Julia 1.9.4)",
-  "image": "julia:1.9.4-bullseye",
-  "remoteUser": "root",
-  "postCreateCommand": "bash .devcontainer/setup.sh"
-}
