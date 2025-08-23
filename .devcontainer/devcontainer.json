@@ -1,8 +1,10 @@
 {
-  "name": "NFL501 Dev",
-  "features": {
-    "ghcr.io/devcontainers/features/julia:1": {
-      "version": "1.9.4"
-    }
-  }
+  "name": "NFL501 (Julia 1.9.4)",
+  "image": "julia:1.9.4-bullseye",
+  "remoteUser": "root",
+  "postCreateCommand": "bash -lc '\
+set -euo pipefail; \
+if [ -d NFL501/backend ]; then cd NFL501/backend; elif [ -d backend ]; then cd backend; else echo \"backend/ not found\"; exit 1; fi; \
+julia --project -e \"using Pkg; Pkg.Registry.add(\\\"General\\\"); Pkg.instantiate(); Pkg.precompile()\" \
+'"
 }
